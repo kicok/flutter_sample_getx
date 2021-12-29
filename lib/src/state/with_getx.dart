@@ -38,7 +38,7 @@ class WithGetX extends StatelessWidget {
               builder: (controller) {
                 return Text(
                   "${controller.count}",
-                  style: const TextStyle(fontSize: 50),
+                  style: const TextStyle(fontSize: 30),
                 );
               }),
           GetBuilder<CountControllerWithGetX>(
@@ -46,11 +46,25 @@ class WithGetX extends StatelessWidget {
               builder: (controller) {
                 return Text(
                   "${controller.count}",
-                  style: const TextStyle(fontSize: 50),
+                  style: const TextStyle(fontSize: 30),
                 );
               }),
           _button("first"),
           _button("second"),
+          GetBuilder<CountControllerWithGetX>(builder: (controller) {
+            print("update!!!"); // 값이 똑같이 5이지만 매번 실행되므로 리소르를 많이 사용한다.
+            return Text(
+              "${controller.count}",
+              style: const TextStyle(fontSize: 30),
+            );
+          }),
+          TextButton(
+            style: Utils.textButtonStryle,
+            onPressed: () {
+              _controllerWithGetX.putNumber(5);
+            },
+            child: const Text("5로 변경", style: TextStyle(fontSize: 30)),
+          ),
         ],
       ),
     );

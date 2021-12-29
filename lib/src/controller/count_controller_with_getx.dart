@@ -6,4 +6,9 @@ class CountControllerWithGetX extends GetxController {
     count++;
     update([id]);
   }
+
+  void putNumber(int value) {
+    count = value;
+    update();
+  }
 }
