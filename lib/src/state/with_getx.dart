@@ -6,6 +6,19 @@ import 'package:get/get.dart';
 class WithGetX extends StatelessWidget {
   const WithGetX({Key? key}) : super(key: key);
 
+  Widget _button() {
+    return TextButton(
+      style: Utils.textButtonStryle,
+      onPressed: () {
+        Get.find<CountControllerWithGetX>().increase();
+      },
+      child: const Text(
+        "+",
+        style: TextStyle(fontSize: 30),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -19,16 +32,7 @@ class WithGetX extends StatelessWidget {
               style: const TextStyle(fontSize: 50),
             );
           }),
-          TextButton(
-            style: Utils.textButtonStryle,
-            onPressed: () {
-              Get.find<CountControllerWithGetX>().increase();
-            },
-            child: const Text(
-              "+",
-              style: TextStyle(fontSize: 30),
-            ),
-          ),
+          _button(),
         ],
       ),
     );
