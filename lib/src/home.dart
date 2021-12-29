@@ -72,6 +72,14 @@ class Home extends StatelessWidget {
                 Get.toNamed('/user/4081?name=스페셜&age=22');
               },
             ),
+            const Divider(),
+            TextButton(
+              style: Utils.textButtonStryle,
+              child: const Text('단순상태관리'),
+              onPressed: () {
+                Get.to(() => const SimpleStateManagePage());
+              },
+            ),
           ],
         ),
       ),
