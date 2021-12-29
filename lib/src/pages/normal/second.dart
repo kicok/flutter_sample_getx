@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample_route_getx/src/home.dart';
+import 'package:flutter_sample_route_getx/src/utils/util.dart';
 import 'package:get/get.dart';
 
 class SecondPage extends StatelessWidget {
@@ -16,10 +17,7 @@ class SecondPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.grey.withOpacity(0.2),
-                primary: Colors.black,
-              ),
+              style: Utils.textButtonStryle,
               child: const Text('뒤로 이동'),
               onPressed: () {
                 //Navigator.of(context).pop();
@@ -27,10 +25,7 @@ class SecondPage extends StatelessWidget {
               },
             ),
             TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.grey.withOpacity(0.2),
-                primary: Colors.black,
-              ),
+              style: Utils.textButtonStryle,
               child: const Text('홈으로 이동'),
               onPressed: () {
                 // Navigator.of(context).pushAndRemoveUntil(

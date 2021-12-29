@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample_route_getx/src/utils/util.dart';
 import 'package:get/get.dart';
 
 class SecondNamedPage extends StatelessWidget {
@@ -15,20 +16,14 @@ class SecondNamedPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.grey.withOpacity(0.2),
-                primary: Colors.black,
-              ),
+              style: Utils.textButtonStryle,
               child: const Text('뒤로 이동'),
               onPressed: () {
                 Get.back(); // context 필요 없이 아무곳에서나 이동할수 있다.
               },
             ),
             TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.grey.withOpacity(0.2),
-                primary: Colors.black,
-              ),
+              style: Utils.textButtonStryle,
               child: const Text('홈으로 이동'),
               onPressed: () {
                 Get.offAllNamed("/");

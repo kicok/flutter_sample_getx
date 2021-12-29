@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sample_route_getx/src/pages/normal/second.dart';
+import 'package:flutter_sample_route_getx/src/utils/util.dart';
 import 'package:get/get.dart';
 
 class FirstPage extends StatelessWidget {
@@ -16,10 +17,7 @@ class FirstPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.grey.withOpacity(0.2),
-                primary: Colors.black,
-              ),
+              style: Utils.textButtonStryle,
               child: const Text('다음페이지 이동'),
               onPressed: () {
                 Get.to(() => const SecondPage());

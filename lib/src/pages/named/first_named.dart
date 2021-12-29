@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample_route_getx/src/utils/util.dart';
 import 'package:get/get.dart';
 
 class FirstNamedPage extends StatelessWidget {
@@ -15,10 +16,7 @@ class FirstNamedPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.grey.withOpacity(0.2),
-                primary: Colors.black,
-              ),
+              style: Utils.textButtonStryle,
               child: const Text('다음페이지 이동'),
               onPressed: () {
                 // 현재페이지를 없애고 페이지 이동,
