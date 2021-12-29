@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_sample_route_getx/src/controller/count_controller_with_getx.dart';
 import 'package:flutter_sample_route_getx/src/controller/count_controller_with_provider.dart';
 import 'package:flutter_sample_route_getx/src/state/with_getx.dart';
 import 'package:flutter_sample_route_getx/src/state/with_provider.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 class SimpleStateManagePage extends StatelessWidget {
@@ -11,9 +9,6 @@ class SimpleStateManagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //ChangeNotifierProvider 처럼 Getx State 를 인스턴스화 한다.
-    Get.put(CountControllerWithGetX());
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('단순상태관리'),

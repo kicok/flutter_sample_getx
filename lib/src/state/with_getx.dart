@@ -21,6 +21,8 @@ class WithGetX extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //ChangeNotifierProvider 처럼 Getx State 를 인스턴스화 한다.
+    Get.put(CountControllerWithGetX());
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
