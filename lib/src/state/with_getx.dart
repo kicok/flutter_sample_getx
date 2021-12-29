@@ -8,13 +8,13 @@ class WithGetX extends StatelessWidget {
   final CountControllerWithGetX _controllerWithGetX =
       Get.put(CountControllerWithGetX());
 
-  Widget _button() {
+  Widget _button(String id) {
     return TextButton(
       style: Utils.textButtonStryle,
       onPressed: () {
         //Get.find<CountControllerWithGetX>().increase();
 
-        _controllerWithGetX.increase();
+        _controllerWithGetX.increase(id);
         //_controllerWithGetX을 멤버 변수로 인스턴스화 하면 Get.find()를 사용해서 인스턴스를 찾지 않아도 된다.
       },
       child: const Text(
@@ -33,13 +33,24 @@ class WithGetX extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text("GetX", style: TextStyle(fontSize: 50)),
-          GetBuilder<CountControllerWithGetX>(builder: (controller) {
-            return Text(
-              "${controller.count}",
-              style: const TextStyle(fontSize: 50),
-            );
-          }),
-          _button(),
+          GetBuilder<CountControllerWithGetX>(
+              id: "first",
+              builder: (controller) {
+                return Text(
+                  "${controller.count}",
+                  style: const TextStyle(fontSize: 50),
+                );
+              }),
+          GetBuilder<CountControllerWithGetX>(
+              id: "second",
+              builder: (controller) {
+                return Text(
+                  "${controller.count}",
+                  style: const TextStyle(fontSize: 50),
+                );
+              }),
+          _button("first"),
+          _button("second"),
         ],
       ),
     );
