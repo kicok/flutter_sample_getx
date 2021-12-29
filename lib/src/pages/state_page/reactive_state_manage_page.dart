@@ -32,6 +32,7 @@ class ReactiveStateManagePage extends StatelessWidget {
                   "${Get.find<CountControllerWithReactive>().count.value}",
                   style: const TextStyle(fontSize: 50));
             }),
+            Text("${Get.find<CountControllerWithReactive>().list.value}"),
             TextButton(
               style: Utils.textButtonStryle,
               onPressed: () {
