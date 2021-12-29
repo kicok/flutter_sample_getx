@@ -26,17 +26,25 @@ class ReactiveStateManagePage extends StatelessWidget {
             //       "${Get.find<CountControllerWithReactive>().count.value}",
             //       style: const TextStyle(fontSize: 50));
             // }),
-            Obx(
-              () => Text(
+            Obx(() {
+              print("update!!!!");
+              return Text(
                   "${Get.find<CountControllerWithReactive>().count.value}",
-                  style: const TextStyle(fontSize: 50)),
-            ),
+                  style: const TextStyle(fontSize: 50));
+            }),
             TextButton(
               style: Utils.textButtonStryle,
               onPressed: () {
                 Get.find<CountControllerWithReactive>().increase();
               },
               child: const Text("+", style: TextStyle(fontSize: 30)),
+            ),
+            TextButton(
+              style: Utils.textButtonStryle,
+              onPressed: () {
+                Get.find<CountControllerWithReactive>().putNumber(5);
+              },
+              child: const Text("5로 변경", style: TextStyle(fontSize: 30)),
             ),
           ],
         ),

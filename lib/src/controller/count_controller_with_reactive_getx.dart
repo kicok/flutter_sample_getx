@@ -10,4 +10,9 @@ class CountControllerWithReactive //extends GetxController
   void increase() {
     count++;
   }
+
+  void putNumber(int value) {
+    //count = value; // 이렇게 사용하지 않음.
+    count(value);
+  }
 }
