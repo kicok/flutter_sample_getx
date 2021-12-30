@@ -37,6 +37,20 @@ class DependencyManagePage extends StatelessWidget {
                 }));
               },
             ),
+            TextButton(
+              style: Utils.textButtonStryle,
+              child: const Text("Get.putAsync"), // 비동기 처리
+              onPressed: () {
+                Get.to(() => const GetPut(), binding: BindingsBuilder(() {
+                  // Get.put방식과 거의 비슷하나 인스턴스만들기전 비동기 작업을 먼저하는데 차이가 있음
+                  // 그러나 굳이 이렇게 하지 않고 Get.put으로 먼저 인스턴스를 만들고 이후에 비동기 작업을 하는 방식을 더 많이 사용함.
+                  Get.putAsync<DependencyController>(() async {
+                    await Future.delayed(const Duration(seconds: 5));
+                    return DependencyController();
+                  });
+                }));
+              },
+            ),
           ],
         ),
       ),
