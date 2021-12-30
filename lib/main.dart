@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sample_route_getx/src/controller/count_controller_with_getx.dart';
+import 'package:flutter_sample_route_getx/src/pages/binding_sample_page.dart';
 import 'package:get/get.dart';
 
 import 'src/home.dart';
@@ -58,6 +60,12 @@ class MyApp extends StatelessWidget {
             name: "/user/:uid",
             page: () => const UserPage(),
             transition: Transition.zoom),
+        GetPage(
+            name: "/binding",
+            page: () => const BindingSamplePage(),
+            binding: BindingsBuilder(() {
+              Get.put(CountControllerWithGetX());
+            }))
       ],
     );
   }

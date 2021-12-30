@@ -97,6 +97,14 @@ class Home extends StatelessWidget {
                 Get.to(() => const DependencyManagePage());
               },
             ),
+            const Divider(),
+            TextButton(
+              style: Utils.textButtonStryle,
+              child: const Text('라우트 바인딩관리'),
+              onPressed: () {
+                Get.toNamed("/binding");
+              },
+            ),
           ],
         ),
       ),
