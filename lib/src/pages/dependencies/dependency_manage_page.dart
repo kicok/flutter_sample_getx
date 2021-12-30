@@ -51,6 +51,19 @@ class DependencyManagePage extends StatelessWidget {
                 }));
               },
             ),
+            TextButton(
+              style: Utils.textButtonStryle,
+              child: const Text("Get.create"),
+              onPressed: () {
+                Get.to(() => const GetPut(), binding: BindingsBuilder(() {
+                  // Get.put, Get.lazyPut, Get.putAsync 는 모두 singleton 방식으로 인스턴스가 하나만 생성하고 다른곳에서 공유하는 방식이다.
+                  // Get.create 방식은 여러개의 인스턴스를 생성할수 있다. 이걸 어떤식으로 활용할지는 알수 없음.
+                  // 사용방식은 Get.GetLazyPut 방식과 비슷함
+                  Get.create<DependencyController>(
+                      () => DependencyController());
+                }));
+              },
+            ),
           ],
         ),
       ),
