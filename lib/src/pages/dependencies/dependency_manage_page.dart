@@ -37,16 +37,6 @@ class DependencyManagePage extends StatelessWidget {
                 }));
               },
             ),
-            TextButton(
-              style: Utils.textButtonStryle,
-              child: const Text(""),
-              onPressed: () {},
-            ),
-            TextButton(
-              style: Utils.textButtonStryle,
-              child: const Text(""),
-              onPressed: () {},
-            ),
           ],
         ),
       ),
