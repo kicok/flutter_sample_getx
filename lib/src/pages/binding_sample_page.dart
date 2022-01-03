@@ -22,7 +22,16 @@ class BindingSamplePage extends StatelessWidget {
             onPressed: () {
               Get.find<CountControllerWithGetX>().increase('first');
             },
-            child: const Text("+first"),
+            child: const Text(
+                "Get.find<CountControllerWithGetX>().increase('first')"),
+          ),
+          const Text("⬇︎ 변경"),
+          TextButton(
+            style: Utils.textButtonStryle,
+            onPressed: () {
+              CountControllerWithGetX.to.increase('first');
+            },
+            child: const Text("CountControllerWithGetX.to.increase('first')"),
           ),
         ],
       ),
