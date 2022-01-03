@@ -4,6 +4,6 @@ import 'package:get/instance_manager.dart';
 class BindingPage implements Bindings {
   @override
   void dependencies() {
-    Get.put(CountControllerWithGetX());
+    Get.put(CountControllerWithGetX(), permanent: true);
   }
 }
