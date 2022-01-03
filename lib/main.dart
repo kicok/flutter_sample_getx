@@ -3,6 +3,7 @@ import 'package:flutter_sample_route_getx/src/controller/count_controller_with_g
 import 'package:flutter_sample_route_getx/src/pages/binding_sample_page.dart';
 import 'package:get/get.dart';
 
+import 'src/binding/binding_page.dart';
 import 'src/home.dart';
 import 'src/pages/argu/map_page.dart';
 import 'src/pages/argu/obj_page.dart';
@@ -61,11 +62,13 @@ class MyApp extends StatelessWidget {
             page: () => const UserPage(),
             transition: Transition.zoom),
         GetPage(
-            name: "/binding",
-            page: () => const BindingSamplePage(),
-            binding: BindingsBuilder(() {
-              Get.put(CountControllerWithGetX());
-            }))
+          name: "/binding",
+          page: () => const BindingSamplePage(),
+          binding: BindingPage(),
+          // binding: BindingsBuilder(() {
+          //   Get.put(CountControllerWithGetX());
+          // }),
+        )
       ],
     );
   }
